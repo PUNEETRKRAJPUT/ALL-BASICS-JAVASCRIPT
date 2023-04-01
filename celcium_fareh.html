@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+      function convert(){
+        var cel=document.getElementById('data').value;
+         
+       var f=(cel *1.8)+32;
+       document.getElementById('result').innerHTML=`${f} F`;
+      }
+    </script>
+</head>
+<body>
+    <input type="number" name="" step="any" id="data"/>
+    <button onclick="convert()">convert</button>C
+    <h1 id="result"></h1>
+    
+</body>
+</html>
