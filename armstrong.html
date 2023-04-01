@@ -5,11 +5,13 @@
     <title>Document</title>
     <script type="text/javascript">
     var number=prompt('enter number');
-    var temp = number;
+    var temp = number;// by here you can check for three digit only
+    // by now you can check for any length
+    var noOfdigit =  number.toString().length;
     var sum= 0;
     while(temp>0){
        var digit = temp%10;
-       sum += digit **3;
+       sum += digit **noOfdigit;
        temp=parseInt(temp/10);
     }
     if(sum==number){
