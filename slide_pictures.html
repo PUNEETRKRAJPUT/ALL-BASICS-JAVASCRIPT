@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sliding Pictures Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		.container {
+			position: relative;
+			overflow: hidden;
+			width: 400px;
+			height: 200px;
+		}
+
+		.slider {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200%;
+			height: 100%;
+		}
+
+		.slider img {
+			float: left;
+			width: 50%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="slider">
+			<img src="image1.jpg">
+			<img src="image2.jpg">
+			<img src="image3.jpg">
+			<img src="image4.jpg">
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$('.slider img:gt(0)').hide(); // hide all images except the first one
+
+			setInterval(function() {
+				$('.slider :first-child').fadeOut()
+					.next('img').fadeIn()
+					.end().appendTo('.slider');
+			}, 3000); // slide every 3 seconds
+		});
+	</script>
+</body>
+</html>
